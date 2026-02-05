@@ -12,3 +12,9 @@ Requires-Dist: swanlab>=0.7.6
 Requires-Dist: torch>=2.10.0
 
 better aigc lib
+
+mkdir src && git -C src clone https://github.com/TorrentBrave/aigco.git
+
+git submodule add --force https://github.com/TorrentBrave/aigco.git src/aigco
+
+uv add --editable ./src/aigco/ <!-- will update aigco.egg.info -->

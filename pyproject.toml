@@ -12,5 +12,5 @@ dependencies = ["python-dotenv",
                 "torch>=2.10.0"]
 
 [tool.setuptools.packages.find]
-include = ["aigcore*"]  # 只包含 aigcore 开头的包
+include = ["aigco*"]  # 只包含 aigco 开头的包
 exclude = ["examples*", "runs*"] # 排除干扰项

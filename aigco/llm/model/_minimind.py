@@ -9,7 +9,7 @@ from transformers import PreTrainedModel, GenerationMixin, PretrainedConfig
 from transformers.modeling_outputs import CausalLMOutputWithPast
 from transformers import PretrainedConfig
 
-from module import RMSNorm, LayerNorm
+from ..norm import RMSNorm, LayerNorm
 
 
 class MiniMindConfig(PretrainedConfig):

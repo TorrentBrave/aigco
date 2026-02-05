@@ -70,7 +70,7 @@ def logger(
         dir = os.getenv("LOGDIR", "logs")
 
     if name is None:
-        name = "aigcore" + datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+        name = "aigco" + datetime.datetime.now().strftime("%Y%m%d%H%M%S")
 
     if dir is not None:
         os.makedirs(dir, exist_ok=True)
