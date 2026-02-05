@@ -1,7 +1,7 @@
 [project]
 name = "aigco"
-version = "0.0.2"
-description = "Omni LLM and Agent"
+version = "0.0.3"
+description = "Omni LLM, Agent and inference"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
