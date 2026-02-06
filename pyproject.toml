@@ -1,6 +1,6 @@
 [project]
 name = "aigco"
-version = "0.0.3"
+version = "0.0.4"
 description = "Omni LLM, Agent and inference"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
