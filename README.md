@@ -1,3 +1,5 @@
+## From Source
+
 better aigc lib
 
 mkdir src && git -C src clone https://github.com/TorrentBrave/aigco.git
@@ -11,3 +13,6 @@ cd src/aigco
 uv lock
 
 uv sync
+
+## From PypI
+uv pip install aigco[flash_attn]
