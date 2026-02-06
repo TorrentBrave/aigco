@@ -54,12 +54,17 @@ class Qwen3Attention(nn.Module):
             hidden_size,
             bias=False,
         )
+        # # 将不可哈希的字典转换为可哈希的元组
+        # if isinstance(rope_scaling, dict):
+        #     # 将字典转为 ((key1, value1), (key2, value2)) 的形式
+        #     rope_scaling = tuple(sorted(rope_scaling.items()))
+
         self.rotary_emb = get_rope(
             self.head_dim,
             rotary_dim=self.head_dim,
             max_position=max_position,
             base=rope_theta,
-            rope_scaling=rope_scaling,
+            rope_scaling=None,
         )
         self.attn = Attention(
             self.num_heads,

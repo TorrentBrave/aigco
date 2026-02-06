@@ -1,8 +1,8 @@
 from collections import deque
 
 from aigco.inference.config import Config
-from _sequence import Sequence, SequenceStatus
-from _block_manager import BlockManager
+from ._sequence import Sequence, SequenceStatus
+from ._block_manager import BlockManager
 
 
 class Scheduler:

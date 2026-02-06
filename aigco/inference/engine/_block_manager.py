@@ -2,7 +2,7 @@ from collections import deque
 import xxhash
 import numpy as np
 
-from _sequence import Sequence
+from ._sequence import Sequence
 
 
 class Block:

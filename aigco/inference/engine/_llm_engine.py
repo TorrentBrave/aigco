@@ -7,9 +7,9 @@ import torch.multiprocessing as mp
 
 from aigco.inference.config import Config
 from aigco.inference.sampling_params import SamplingParams
-from _sequence import Sequence
-from _scheduler import Scheduler
-from _model_runner import ModelRunner
+from ._sequence import Sequence
+from ._scheduler import Scheduler
+from ._model_runner import ModelRunner
 
 
 class LLMEngine:

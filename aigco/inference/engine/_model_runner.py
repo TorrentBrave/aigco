@@ -5,7 +5,7 @@ from multiprocessing.synchronize import Event
 from multiprocessing.shared_memory import SharedMemory
 
 from aigco.inference.config import Config
-from _sequence import Sequence
+from ._sequence import Sequence
 from aigco.inference.models import Qwen3ForCausalLM
 from ..layers.sampler import Sampler
 from aigco.inference.utils import set_context, get_context, reset_context
