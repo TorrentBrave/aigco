@@ -21,6 +21,7 @@ class RotaryEmbedding(nn.Module):
         rotary_dim: int,
         max_position_embeddings: int,
         base: float,
+        scaling_factor: float = 1.0,
     ) -> None:
         super().__init__()
         self.head_size = head_size
@@ -29,6 +30,8 @@ class RotaryEmbedding(nn.Module):
             base ** (torch.arange(0, rotary_dim, 2, dtype=torch.float) / rotary_dim)
         )
         t = torch.arange(max_position_embeddings, dtype=torch.float)
+        t = t / scaling_factor
+
         freqs = torch.einsum("i,j -> ij", t, inv_freq)
         cos = freqs.cos()
         sin = freqs.sin()
@@ -55,8 +58,20 @@ def get_rope(
     rotary_dim: int,
     max_position: int,
     base: float,
-    rope_scaling: dict | None = None,
+    rope_scaling: dict | tuple | None = None,
 ):
-    assert rope_scaling is None
-    rotary_emb = RotaryEmbedding(head_size, rotary_dim, max_position, base)
+    # assert rope_scaling is None
+    # 1. 解析 rope_scaling
+    scaling_factor = 1.0
+    if rope_scaling is not None:
+        # 如果是元组（为了绕过哈希报错），转回字典
+        if isinstance(rope_scaling, tuple):
+            scaling_dict = dict(rope_scaling)
+
+        # Qwen3 通常在配置里叫 "factor"
+        # 如果没有配置 factor，默认为 1.0
+        scaling_factor = scaling_dict.get("factor", 1.0)
+    rotary_emb = RotaryEmbedding(
+        head_size, rotary_dim, max_position, base, scaling_factor
+    )
     return rotary_emb
