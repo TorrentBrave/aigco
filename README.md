@@ -1,12 +1,8 @@
 <p align="center">
   <img
-    src="docs/aigco_logo.png"
+    src="docs/aigco_logo-modified.png"
     alt="aigco Logo"
     width="200"
-    style="
-        border-radius: 20px;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-    "
   />
 </p>
 
