@@ -3,3 +3,4 @@
 !.pixi/config.toml
 .env
 examples/logs
+aigco.egg-info
